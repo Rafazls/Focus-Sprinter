@@ -2,6 +2,7 @@ import logo from '../assets/logo.svg'
 import { Searchbar } from '../components/Searchbar'
 import line  from '../assets/line.svg'
 import { Link } from 'react-router-dom';
+import PomodoroTimer from '../components/PomodoroTimer';
 //import line2  from '../assets/line2.svg'
 
 
@@ -15,7 +16,7 @@ export default function lastmatters() {
   <Searchbar/>
 </div>
 <div className=' ml-[310px]'>
-<img className='  sm:w-16 sm:h-16 md:w-28 md:h-28 lg:w-28 lg:h-28 xl:w-36 xl:h-36 2xl:w-80 2xl:h-40' src={logo} alt="Focus-sprinter logo " />          
+<img className=' animatecss animatecss-fadeInLeft sm:w-16 sm:h-16 md:w-28 md:h-28 lg:w-28 lg:h-28 xl:w-36 xl:h-36 2xl:w-80 2xl:h-40' src={logo} alt="Focus-sprinter logo " />          
 </div>
 <div className=' ml-[450px] justify-center'>
     <h1 className='  text-4xl font-bold leading-tight text-green-500 '> Bem Vindo João</h1>
@@ -66,6 +67,7 @@ export default function lastmatters() {
 <div className="grid grid-cols-1  ">
   <div className=' bg-white-200 w-[1200px] h-[665px] inline-block absolute rounded-3xl ml-[500px] top-64 text-center bg-white'>
     <h1 className=' text-2xl'>Ultimos assuntos</h1>
+
   </div>
   
 

@@ -64,6 +64,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-animatecss')
+  ],
 }
 
