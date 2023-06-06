@@ -40,17 +40,29 @@ export default function PomodoroTimer(){
     };
   
     return (
-      <div>
-        <button onClick={handleStart} disabled={isActive}>
-          Iniciar
-        </button>
-        <button onClick={handleStop} disabled={!isActive}>
-          Parar
-        </button>
-        <div className="popup">
-          <div className="popup-content">
-            <h3>{isBreak ? 'Tempo de Pausa' : 'Tempo de Trabalho'}</h3>
-            <p>{formatTime(time)}</p>
+      <div className='absolute bg-green-500 rounded-xl w-60 h-32 flex items-center flex-col border-2 border-black' id="pomodoroDiv" onMouseDown={(e)=> {
+        const pomodoro = document.getElementById('pomodoroDiv')
+        document.onmousemove = (ev) => {
+          if (ev.clientX + pomodoro.clientWidth < document.body.clientWidth && ev.clientY + pomodoro.clientHeight < document.body.clientHeight){
+            console.log(ev.clientX + pomodoro.clientWidth, document.body.clientWidth)
+            pomodoro.style.left = `${ev.clientX}px`
+            pomodoro.style.top = `${ev.clientY}px`
+          }
+        }
+      }}>
+        <h1 className='text-white text-2xl'>Pomodoro</h1>
+        <div className='mt-2'>
+          <button onClick={handleStart} disabled={isActive} className='bg-green-300 rounded-full px-6 text-green-900 hover:bg-green-200 mr-2'>
+            Iniciar
+          </button>
+          <button onClick={handleStop} disabled={!isActive} className='bg-green-300 rounded-full px-6 text-green-900 hover:bg-green-200 cursor-pointer'>
+            Parar
+          </button>
+        </div>
+        <div className="popup mt-3 flex items-center justify-center">
+          <div className="popup-content flex flex-col items-center justify-center">
+            <h3 className='text-sm'>{isBreak ? 'Tempo de Pausa' : 'Tempo de Trabalho'}</h3>
+            <p className='font-bold text-base'>{formatTime(time)}</p>
           </div>
         </div>
       </div>
